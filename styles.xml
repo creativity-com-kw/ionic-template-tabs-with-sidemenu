@@ -1,0 +1,9 @@
+<resources>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="blackColor">#000000</color>
+        
+    <style name="customTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">        
+        <item name="android:colorBackground">@color/whiteColor</item>
+        <item name="android:windowBackground">@color/whiteColor</item>  
+    </style>
+</resources>

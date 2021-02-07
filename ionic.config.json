@@ -1,0 +1,11 @@
+{
+  "name": "P141-O-Studio-Mobile-App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "hooks": {
+    "build:before": "./scripts/android_custom_theme.js",
+    "build:after": "./scripts/copy_android_notification_icons.js"
+  }
+}
