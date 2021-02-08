@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -40,6 +41,7 @@ import { AuthState } from './store/states/auth.state';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StatusBar,
     SplashScreen,
+    Keyboard,
     MobileAccessibility
   ],
   bootstrap: [AppComponent],
