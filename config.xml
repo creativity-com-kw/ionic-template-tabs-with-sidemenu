@@ -55,6 +55,9 @@
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
+        <preference name="KeyboardResize" value="true" />
+        <preference name="KeyboardResizeMode" value="native" />
+        <preference name="KeyboardStyle" value="light" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
