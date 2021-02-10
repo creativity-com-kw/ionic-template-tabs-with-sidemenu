@@ -24,3 +24,134 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --ion-font-family: "IBM Plex Sans", sans-serif;
+}
+
+// font size classes
+@for $i from 0 through 64 {
+    .f-#{$i} {
+        font-size: #{$i}px;
+    }
+}
+
+// font weight classes
+$font-weights: 100 200 300 400 500 600 700 800 900 bold bolder lighter normal;
+@each $weight in $font-weights {
+    .fw-#{$weight} {
+        font-weight: $weight;
+    }
+}
+
+// margin classes
+@for $i from 0 through 64 {
+    .m-#{$i} {
+        margin: #{$i}px;
+    }
+
+    .m-t-#{$i} {
+        margin-top: #{$i}px;
+    }
+
+    .m-r-#{$i} {
+        margin-right: #{$i}px;
+    }
+
+    .m-b-#{$i} {
+        margin-bottom: #{$i}px;
+    }
+
+    .m-l-#{$i} {
+        margin-left: #{$i}px;
+    }
+}
+
+// padding classes
+@for $i from 0 through 64 {
+    .p-#{$i} {
+        padding: #{$i}px;
+    }
+
+    .p-t-#{$i} {
+        padding-top: #{$i}px;
+    }
+
+    .p-r-#{$i} {
+        padding-right: #{$i}px;
+    }
+
+    .p-b-#{$i} {
+        padding-bottom: #{$i}px;
+    }
+
+    .p-l-#{$i} {
+        padding-left: #{$i}px;
+    }
+}
+
+ion-title {
+    font-size: 18px;
+}
+
+ion-button[size="default"] {
+    height: 3em;
+    font-size: 16px;
+}
+
+ion-progress-bar {
+    height: 3px;
+}
+
+*:focus {
+    outline: 0;
+}
+
+// helper classes
+.has-shadow {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.img-responsive {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-spinner {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.no-records-found {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--ion-color-step-700);
+    }
+}
+
+// Ion Ripple Effect Parent
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+}
