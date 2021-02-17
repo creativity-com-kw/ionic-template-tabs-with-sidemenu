@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -25,11 +25,17 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
     --ion-font-family: "IBM Plex Sans", sans-serif;
+}
+
+// border radius classes
+@for $i from 0 through 64 {
+    .b-r-#{$i} {
+        border-radius: #{$i}px;
+    }
 }
 
 // font size classes
@@ -54,19 +60,19 @@ $font-weights: 100 200 300 400 500 600 700 800 900 bold bolder lighter normal;
     }
 
     .m-t-#{$i} {
-        margin-top: #{$i}px;
+        margin-block-start: #{$i}px;
     }
 
     .m-r-#{$i} {
-        margin-right: #{$i}px;
+        margin-inline-end: #{$i}px;
     }
 
     .m-b-#{$i} {
-        margin-bottom: #{$i}px;
+        margin-block-end: #{$i}px;
     }
 
     .m-l-#{$i} {
-        margin-left: #{$i}px;
+        margin-inline-start: #{$i}px;
     }
 }
 
@@ -77,20 +83,24 @@ $font-weights: 100 200 300 400 500 600 700 800 900 bold bolder lighter normal;
     }
 
     .p-t-#{$i} {
-        padding-top: #{$i}px;
+        padding-block-start: #{$i}px;
     }
 
     .p-r-#{$i} {
-        padding-right: #{$i}px;
+        padding-inline-end: #{$i}px;
     }
 
     .p-b-#{$i} {
-        padding-bottom: #{$i}px;
+        padding-block-end: #{$i}px;
     }
 
     .p-l-#{$i} {
-        padding-left: #{$i}px;
+        padding-inline-start: #{$i}px;
     }
+}
+
+*:focus {
+    outline: 0;
 }
 
 ion-title {
@@ -104,10 +114,6 @@ ion-button[size="default"] {
 
 ion-progress-bar {
     height: 3px;
-}
-
-*:focus {
-    outline: 0;
 }
 
 // helper classes
