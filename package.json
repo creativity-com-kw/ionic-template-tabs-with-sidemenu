@@ -32,8 +32,11 @@
     "@ngxs/logger-plugin": "^3.7.1",
     "@ngxs/storage-plugin": "^3.7.1",
     "@ngxs/store": "^3.7.1",
-    "cordova-android": "8.1.0",
+    "cordova-android": "^9.0.0",
+    "cordova-plugin-androidx": "^3.0.0",
+    "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-inappbrowser": "^4.1.0",
+    "instabug-cordova": "^9.1.6",
     "ion2-calendar": "^3.0.0-rc.0",
     "moment": "^2.29.1",
     "ng-lazyload-image": "^9.1.0",
@@ -86,7 +89,10 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-inappbrowser": {},
-      "onesignal-cordova-plugin": {}
+      "onesignal-cordova-plugin": {},
+      "instabug-cordova": {},
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
       "android"

@@ -4,6 +4,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Platform } from '@ionic/angular';
 
+declare let cordova: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -50,6 +52,26 @@ export class AppComponent {
         // Accessibility
         if (this.mobileAccessibility) {
           this.mobileAccessibility.usePreferredTextZoom(false);
+        }
+
+        // Instabug
+        if (this.platform.is('ios')) {
+          cordova.plugins.instabug.activate(
+            {
+              ios: "fc171503e9224bd1596693135c568bf6"
+            },
+            "shake",
+            {
+              commentRequired: true,
+              colorTheme: "dark",
+            },
+            function () {
+              console.log("Instabug initialized.");
+            },
+            function (error) {
+              console.log("Instabug could not be initialized - " + error);
+            }
+          );
         }
       }
     });
