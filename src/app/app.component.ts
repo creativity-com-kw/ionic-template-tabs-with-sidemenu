@@ -3,6 +3,11 @@ import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Platform } from '@ionic/angular';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Store } from '@ngxs/store';
+import { TranslateCacheService } from 'ngx-translate-cache';
+import { SetLanguage } from './store/actions/app.action';
+import { AppState } from './store/states/app.state';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +28,13 @@ export class AppComponent {
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
+    private store: Store,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private mobileAccessibility: MobileAccessibility
+    private mobileAccessibility: MobileAccessibility,
+    private translateService: TranslateService,
+    private translateCacheService: TranslateCacheService,
   ) {
     this.initializeApp();
   }
@@ -52,6 +60,24 @@ export class AppComponent {
           this.mobileAccessibility.usePreferredTextZoom(false);
         }
       }
+
+      // Init translate cache service
+      this.initTranslateCacheService();
     });
   }
+
+  initTranslateCacheService() {
+    localStorage.setItem('lang', this.store.selectSnapshot(AppState.language));
+    this.translateCacheService.init();
+
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.store.dispatch(new SetLanguage(event.lang));
+
+      setTimeout(() => {
+        document.getElementsByTagName('html')[0].setAttribute('lang', event.lang);
+        document.getElementsByTagName('html')[0].setAttribute('dir', event.lang === 'en' ? 'ltr' : 'rtl');
+      }, 800);
+    });
+  }
+
 }

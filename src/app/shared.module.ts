@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { TranslateModule } from '@ngx-translate/core';
 import { CalendarModule } from 'ion2-calendar'; // npm install ion2-calendar@next moment --save
 import { LazyLoadImageModule } from 'ng-lazyload-image'; // https://github.com/tjoskar/ng-lazyload-image
 import { ErrorInterceptor } from './helpers/error.interceptor';
@@ -29,6 +30,7 @@ import { DateFormat } from './pipes/date-format.pipe';
   ],
   exports: [
     ReactiveFormsModule,
+    TranslateModule,
     CalendarModule,
     LazyLoadImageModule,
     DateFormat
